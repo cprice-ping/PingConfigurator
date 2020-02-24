@@ -1,0 +1,23 @@
+{
+    "name": "ping-configurator",
+    "version": "0.0.1",
+    "description": "A simple Node app to execute a sequence of Postman collections via Newman.",
+    "main": "pingconfig.js",
+    "scripts": {
+      "start": "node pingconfig.js"
+    },
+    "dependencies": {
+      "newman": "^4.5.7"
+    },
+    "engines": {
+      "node": "10.x"
+    },
+    "license": "MIT",
+    "keywords": [
+      "Ping Identity",
+      "API",
+      "DevOps",
+      "javascript",
+      "glitch"
+    ]
+  }
