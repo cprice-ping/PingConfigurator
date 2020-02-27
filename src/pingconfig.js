@@ -3,35 +3,31 @@
 
 // init project
 const newman = require("newman");
+const async = require("async");
 
 var collections = process.env.COLLECTIONS.split(",");
 console.log(collections);
 
-
-var i=0;
-for (let i=0; i < collections.length; i++) {
-// do {
-  console.log("Loop Count: ", i);
+async.eachSeries(collections, function (collection, next){
 
     // call newman.run to pass `options` object and wait for callback
     newman.run(
       {
-        collection: collections[i],
+        collection: collection,
         environment: './postman_vars.json',
         ignoreRedirects: true,
         insecure: true,
         reporters: 'cli'
       },
     ).on('start', function (err, args) { // on start of run, log to console
-      console.log('Running Collection: ', collections[i]);
+      console.log('Running Collection: ', collection);
     }).on('done', function (err, summary) {
       if (err || summary.error) {
           console.error('Collection encountered an error.');
       }
       else {
           console.log('Collection run completed.');
-          i++;
+          next(err, summary);
       }
     });
-}
-// while (i < collections.length);
+})
