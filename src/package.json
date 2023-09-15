@@ -7,7 +7,7 @@
       "start": "node pingconfig.js"
     },
     "dependencies": {
-      "newman": "~5.3.1",
+      "newman": "~6.0.0",
       "async": "~3.2.0"
     },
     "engines": {
