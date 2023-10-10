@@ -1,6 +1,6 @@
 {
     "name": "ping-configurator",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "description": "A simple Node app to execute a sequence of Postman collections via Newman.",
     "main": "pingconfig.js",
     "scripts": {
@@ -11,7 +11,7 @@
       "async": "~3.2.0"
     },
     "engines": {
-      "node": "14.x"
+      "node": "18.x"
     },
     "license": "MIT",
     "keywords": [
